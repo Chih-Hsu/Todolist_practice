@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firstTaskFragment">
+
+    <fragment
+        android:id="@+id/firstTaskFragment"
+        android:name="com.example.tasklist.firstTask.FirstTaskFragment"
+        android:label="FiestTaskFragment">
+        <action
+            android:id="@+id/action_firstTaskFragment_to_taskInputFragment"
+            app:destination="@id/taskInputDialogFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskInputDialogFragment"
+        android:name="com.example.tasklist.taskInputDialog.TaskInputDialogFragment"
+        android:label="TaskInputDialogFragment" />
+</navigation>
