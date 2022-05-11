@@ -4,4 +4,8 @@
     <string name="welcome_text">歡迎來到 Any.do</string>
     <string name="add_first_task_hint">輕擊加號按鈕，以添加您的首項任務</string>
     <string name="task_input_hint">我想要...</string>
+    <string name="today">今天</string>
+    <string name="tomorrow">明天</string>
+    <string name="recently">近期</string>
+    <string name="later">以後</string>
 </resources>

@@ -9,7 +9,7 @@ data class TaskData(
     @PrimaryKey(autoGenerate = true)
     var taskId : Long,
     @ColumnInfo(name = "title")
-    var title : String,
+    var title : String
 //    @ColumnInfo(name = "start_time")
 //    var startTime:Long,
 //    @ColumnInfo(name = "end_time")

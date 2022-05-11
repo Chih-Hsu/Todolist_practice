@@ -12,15 +12,21 @@ class TaskInputDialogViewModel(
 
     private val newTask = MutableLiveData<TaskData>()
 
-    // When newTask.value = null then
-    private val _navigationToMain = MutableLiveData<TaskData>()
-    val navigationToMain: LiveData<TaskData>
+    // When newTask.value = null then navigate
+    private val _navigationToMain = MutableLiveData<Boolean>()
+    val navigationToMain: LiveData<Boolean>
         get() = _navigationToMain
 
 
-    private fun addNewTask() {
-        newTask.value = database.getLastTask()
+    fun addNewTask(text:String):TaskData? {
+        val task = database.getLastTask()
+        if (task != null)task.title = text
+        _navigationToMain.value = true
+        return task
+    }
 
+    fun doneNavigation(){
+        _navigationToMain.value = false
     }
 
 }
