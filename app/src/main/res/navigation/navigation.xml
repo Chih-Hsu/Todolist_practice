@@ -16,5 +16,13 @@
     <fragment
         android:id="@+id/taskInputDialogFragment"
         android:name="com.example.tasklist.taskInputDialog.TaskInputDialogFragment"
-        android:label="TaskInputDialogFragment" />
+        android:label="TaskInputDialogFragment" >
+        <action
+            android:id="@+id/action_taskInputDialogFragment_to_taskListFragment"
+            app:destination="@id/taskListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.example.tasklist.taskList.TaskListFragment"
+        android:label="TaskListFragment" />
 </navigation>

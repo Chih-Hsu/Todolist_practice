@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.tasklist.R
 import com.example.tasklist.database.TaskDataDatabase
 import com.example.tasklist.databinding.TaskInputFragmentBinding
@@ -37,8 +38,10 @@ class TaskInputDialogFragment : Fragment(){
         }
 
         binding.doneButton.setOnClickListener {
-            viewModel.addNewTask(binding.taskInputEdittext.text.toString())
+            //不能在UI操作database
+//            viewModel.addNewTask(binding.taskInputEdittext.text.toString())
 
+            this.findNavController().navigate(R.id.action_taskInputDialogFragment_to_taskListFragment)
         }
 
 
