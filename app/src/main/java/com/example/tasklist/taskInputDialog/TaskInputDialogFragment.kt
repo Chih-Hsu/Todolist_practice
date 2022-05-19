@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.tasklist.R
@@ -31,7 +32,7 @@ class TaskInputDialogFragment : Fragment(){
         binding.taskInputViewModel = viewModel
 
         //lifecycle設定
-//        binding.setLifecycleOwner(this)
+        binding.setLifecycleOwner(this)
         binding.taskInputEdittext.setOnClickListener{
             binding.doneButton.visibility = View.VISIBLE
             binding.voiceButton.visibility = View.GONE

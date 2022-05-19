@@ -20,17 +20,12 @@ class TaskInputDialogViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private val newTask = MutableLiveData<TaskData>()
 
-    // When newTask.value = null then navigate
-    private val _navigationToMain = MutableLiveData<Boolean>()
-    val navigationToMain: LiveData<Boolean>
-        get() = _navigationToMain
-
 
     fun addNewTask(text:String) {
         uiScope.launch {  val task = TaskData()
         task.title = text
         insert(task)
-        _navigationToMain.value = true}
+        }
     }
 
     private suspend fun insert(task : TaskData){
@@ -40,9 +35,6 @@ class TaskInputDialogViewModel(
 
     }
 
-    fun doneNavigation(){
-        _navigationToMain.value = false
-    }
 
 
     override fun onCleared() {
