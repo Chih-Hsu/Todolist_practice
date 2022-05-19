@@ -38,9 +38,7 @@ class TaskInputDialogFragment : Fragment(){
         }
 
         binding.doneButton.setOnClickListener {
-            //不能在UI操作database
-//            viewModel.addNewTask(binding.taskInputEdittext.text.toString())
-
+            viewModel.addNewTask(binding.taskInputEdittext.text.toString())
             this.findNavController().navigate(R.id.action_taskInputDialogFragment_to_taskListFragment)
         }
 

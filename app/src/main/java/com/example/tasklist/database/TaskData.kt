@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "task_data_table")
 data class TaskData(
     @PrimaryKey(autoGenerate = true)
-    var taskId : Long,
+    var taskId : Long = 0L,
     @ColumnInfo(name = "title")
-    var title : String
+    var title : String = "default"
 //    @ColumnInfo(name = "start_time")
 //    var startTime:Long,
 //    @ColumnInfo(name = "end_time")
